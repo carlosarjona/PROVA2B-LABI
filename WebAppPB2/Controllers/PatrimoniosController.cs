@@ -52,6 +52,7 @@ namespace WebAppPB2.Controllers
             {
                 db.Patrimonios.Add(patrimonio);
                 db.SaveChanges();
+                TempData["Mensagem"] = "Cadastrado com Sucesso! ";
                 return RedirectToAction("Index");
             }
 
