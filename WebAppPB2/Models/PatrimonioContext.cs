@@ -15,7 +15,7 @@ namespace WebAppPB2.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public PatrimonioContext() : base("name=PatrimonioContext")
+        public PatrimonioContext() : base("name=strConexao")
         {
         }
 
