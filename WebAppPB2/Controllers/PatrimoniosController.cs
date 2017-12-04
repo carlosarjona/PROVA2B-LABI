@@ -48,11 +48,12 @@ namespace WebAppPB2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,NumeroDeTombo,Descricao,Tipo")] Patrimonio patrimonio)
         {
+            TempData["Mensagem"] = "Cadastrado com Sucesso! ";
             if (ModelState.IsValid)
             {
                 db.Patrimonios.Add(patrimonio);
                 db.SaveChanges();
-                TempData["Mensagem"] = "Cadastrado com Sucesso! ";
+                
                 return RedirectToAction("Index");
             }
 
