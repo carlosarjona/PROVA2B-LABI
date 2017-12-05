@@ -38,6 +38,7 @@ namespace WebAppPB2.Controllers
         // GET: Patrimonios/Create
         public ActionResult Create()
         {
+            TempData["MensagemCadastrada"] = "Realizado com Sucesso! ";
             return View();
         }
 
@@ -48,7 +49,7 @@ namespace WebAppPB2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,NumeroDeTombo,Descricao,Tipo")] Patrimonio patrimonio)
         {
-            TempData["Mensagem"] = "Cadastrado com Sucesso! ";
+            
             if (ModelState.IsValid)
             {
                 db.Patrimonios.Add(patrimonio);
@@ -63,6 +64,7 @@ namespace WebAppPB2.Controllers
         // GET: Patrimonios/Edit/5
         public ActionResult Edit(int? id)
         {
+            TempData["MensagemEditada"] = "Realizado com Sucesso! ";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -86,6 +88,7 @@ namespace WebAppPB2.Controllers
             {
                 db.Entry(patrimonio).State = EntityState.Modified;
                 db.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
             return View(patrimonio);
@@ -94,6 +97,7 @@ namespace WebAppPB2.Controllers
         // GET: Patrimonios/Delete/5
         public ActionResult Delete(int? id)
         {
+            TempData["MensagemDeletada"] = "Realizado com Sucesso! ";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +118,7 @@ namespace WebAppPB2.Controllers
             Patrimonio patrimonio = db.Patrimonios.Find(id);
             db.Patrimonios.Remove(patrimonio);
             db.SaveChanges();
+            
             return RedirectToAction("Index");
         }
 

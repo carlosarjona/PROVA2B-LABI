@@ -9,8 +9,22 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@if (TempData["MensagemCadastrada"] != null)
+{
+    <p class="alert-success">@TempData["MensagemCadastrada"]</p>
+}
+@if (TempData["MensagemEditada"] != null)
+{
+    <p class="alert-warning">@TempData["MensagemEditada"]</p>
+}
+@if (TempData["MensagemDeletada"] != null)
+{
+    <p class="alert-danger">@TempData["MensagemDeletada"]</p>
+}
+
 <table class="table">
-    <thered>
+    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.NumeroDeTombo)
@@ -23,7 +37,7 @@
             </th>
             <th></th>
         </tr>
-    </thered>
+    </thead>
     <tbody>
     @foreach (var item in Model)
     {

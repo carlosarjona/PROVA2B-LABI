@@ -513,6 +513,7 @@
     <Content Include="Views\Patrimonios\Details.cshtml" />
     <Content Include="Views\Patrimonios\Edit.cshtml" />
     <Content Include="Views\Patrimonios\Index.cshtml" />
+    <Content Include="Scripts\PTBR.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
